@@ -1,15 +1,18 @@
-song_list = [('See You Again', 'Wiz Khalifa', 229), ('We Own It', 'Wiz Khalifa', 227), ('Gangnam Style', 'PSY', 219)]
-def create_artist_duratoin_dictionary(song_list):
+import os
 
-    sl = {}
-    artist =""
-    nm = 0
-    for song in song_list:
-        if (artist = song[1])
-            nm += song[2]
+def read_song_info(filename):
+    song_list = []
+    
+    input_file = open(filename, "r")
+    songs = input_file.readlines()
+    input_file.close()
 
-        sl[song[1]] = song[2]
+    for song in songs:
+        list = song.split(',')
+        list[2] = int(list[2])
+        tup = tuple(list)
+        song_list.append(tup)
 
-    return sl
+    return song_list
 
-print(create_artist_duratoin_dictionary(song_list))
+print(read_song_info(os.getcwd()+"/py/Songs5.txt"))
