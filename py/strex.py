@@ -1,6 +1,6 @@
 import os
 import sys
-
+from parse import parse
 
 # str.format(*parameters)
 
@@ -13,16 +13,20 @@ def sformat():
 
     header = "INCOME | PROFIT | PERCENT"
     template = "{income:>6} | {profit:^6} | {percent:<6.2%}"
+    rt = "{income} | {profit} | {percent}"
 
     print(header)
     for i, p in frs:
-        print(template.format(income=i, profit=p, percent=p/i))
+        row = template.format(income=i, profit=p, percent=p/i)
+        print(row)
+        rs = parse(rt, row)
+        print(rs)
 
     print("Hello {0}, how are you {1}?".format("Fred Young", "Fred"))
 
 # str ETL
 def sETL():
-    fname = os.path.join(sys.path[0])+ "\\test.txt"
+    fname = os.path.join(sys.path[0])+ "/test.txt"
     
     with open(fname, "r") as inf:
         for line in inf:
@@ -32,9 +36,10 @@ def sETL():
     words = inf.read().split()
     inf.close()
 
+    # netsted comprehensions
     redacted = [''.join('X' if c.isdigit() else c for c in word) for word in words]
-    
+
     print(' '.join(redacted))
 
-# sformat()
-sETL()
+sformat()
+# sETL()
