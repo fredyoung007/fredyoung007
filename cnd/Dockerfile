@@ -4,7 +4,7 @@ RUN mkdir -p /app/hello
 WORKDIR /app/hello
 COPY requirements.txt /app/hello
 RUN pip install --no-cache-dir -r requirements.txt
-COPY HelloWorld.py /app/hello/HelloWorld.py 
+COPY HelloService.py /app/hello/HelloService.py 
 
 EXPOSE 8888
-CMD ["python", "HelloWorld.py"]
+CMD ["python", "HelloService.py"]

@@ -9,14 +9,11 @@ app = Flask(__name__)
 api = Api(app)
 payload ="Hello world"
 
-class HelloWorld(Resource):
+class HelloService(Resource):
     def get(self):
         return {"message":payload}
 
-    def put(self):
-        payload = request.form["message"]
-
-api.add_resource(HelloWorld,"/")
+api.add_resource(HelloService,"/")
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8888, debug=True)
