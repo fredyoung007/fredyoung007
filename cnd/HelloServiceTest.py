@@ -1,7 +1,11 @@
+#!/usr/bin/env python3
+"""HelloServiceTest.py
+"""
+
 import unittest
 import requests
 
-class HelloWorldTest(unittest.TestCase):
+class HelloServiceTest(unittest.TestCase):
     def setUp(self):
         self.response = requests.get("http://127.0.0.1:8888")
 

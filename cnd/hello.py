@@ -1,16 +1,17 @@
+#!/usr/bin/env python3
 """hello.py
 """
-#! /usr/bin/evn python
 
+import requests
 from flask import Flask
 
 app = Flask(__name__)
 
-message = "Hello world"
-
 @app.route("/")
 def hello():
-    return message
+    message = requests.get("http://127.0.0.1:8888").json()["message"]
+    return "<h1 style=background-color:powderblue;>" + message + "</h1>"
+    
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8888, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)

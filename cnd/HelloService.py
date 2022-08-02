@@ -1,15 +1,20 @@
-"""HelloWord.py
+#!/usr/bin/env python3
+"""HelloService.py
 """
-from flask import Flask
+
+from flask import Flask, request
 from flask_restful import Api, Resource
 
 app = Flask(__name__)
 api = Api(app)
+payload ="Hello world"
 
 class HelloWorld(Resource):
     def get(self):
-        data = {"message":"Hello world"}
-        return data
+        return {"message":payload}
+
+    def put(self):
+        payload = request.form["message"]
 
 api.add_resource(HelloWorld,"/")
 
