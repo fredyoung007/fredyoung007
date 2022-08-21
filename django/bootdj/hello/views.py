@@ -15,3 +15,6 @@ def hello(request):
 
 class HelloView(TemplateView):
     template_name = "hello.html"
+
+class AboutView(TemplateView):
+    template_name = "about.html"
