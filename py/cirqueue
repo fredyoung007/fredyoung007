@@ -1,0 +1,40 @@
+class CircularQueue:
+    def __init__(self, capacity = 8, items = [], front = 0, count = 0):
+        self.capacity = capacity
+        self.items = [None] * capacity
+        self.front = front
+        self.back = capacity - 1
+        self.count = count
+
+    def enqueue(self, item):
+        self.items.insert(0, item) 
+
+    def dequeue(self):
+        if len(self.items) == 0:
+            raise IndexError("ERROR: The queue is empty!")
+        return self.items.pop()
+
+    def __str__(self):
+        string = "-> |"
+        string += ', '.join(str(item) for item in self.items if item is not None)
+        string += "| ->"
+        return string
+
+    def is_full(self):
+        return self.count == self.capacity-1
+
+    def is_empty(self):
+        return self.count == 0
+
+    def clear(self):
+        self.__items = []
+
+q = CircularQueue()
+q.enqueue(1)
+print(q.items)
+print(q.front)
+print(q.back)
+print(q.count)
+print(q.is_full())
+print(q.is_empty())
+
