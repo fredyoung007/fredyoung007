@@ -31,7 +31,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # DEBUG = True
 DEBUG = env.bool("DJANGO_DEBUG")
 
-ALLOWED_HOSTS = [".local", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["polar-brushlands-50854.herokuapp.com", ".local", "localhost", "127.0.0.1"]
 
 # Application definition
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     # Third-party
     "crispy_forms", 
@@ -67,6 +68,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -143,7 +145,8 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage" 
+#STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage" 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
