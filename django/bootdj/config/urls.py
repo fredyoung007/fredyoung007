@@ -23,4 +23,5 @@ urlpatterns = [
     # Local apps
     path("accounts/", include("accounts.urls")),
     path("", include("hello.urls")),
+    path("quiz/", include("quiz.urls")),
 ]

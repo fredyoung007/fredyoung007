@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'quiz_list' %}">
+                    <font color="blue">Take another Quiz</font></a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="alert alert-success">
+        <div class="card-columns-vertical mt-1">
+        <h5 class="">Top 2 ranking roles for the candidate based on score:</h5>
+            {% for r in sorted_role %}
+            <div class="card mt-1">
+                <div class="card-header"><h5>Role {{r.0}}</h5></div>
+                <div class="card-header" ><font color="green">Score: {{r.1}}</font></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="alert alert-success">
+        <div class="card-columns-vertical mt-1">
+        <h5 class="">Quiz Record: </h5>
+            {% for question in quiz.question_set.all %}
+            <div class="card mt-1">
+                <div class="card-header"><h5>{{question.question}}</h5></div>
+                {% for choice in question.choice_set.all %}
+                    <div class="card-header" ><font color="green">{{choice.order}}. {{choice.choice}}: points={{choice.rate}}</font></div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'quiz_list' %}">
+                    <font color="blue">Take another Quiz</font></a>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>

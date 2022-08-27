@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Welceome to the QUIZ</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                  <a class="navbar-brand" href="{% url 'quiz_list' %}">Welcome to Role Quiz</a>
+            </div>
+        </div>
+    </nav>
+    
+    {% if quiz_list %}
+        <div class="container">
+            <div class="card-deck">
+                {% for quiz in quiz_list %}
+                    <div class="card" style="width: 36rem;">
+                        <div class="card-body bg-light">
+                              <h5 class="card-title">{{ quiz.name }} <span class="text-success">
+                              <p class="card-text">{{ quiz.description}}</p>
+                            <form action="{% url 'quiz_detail' quiz.id %}" method="get">
+                                  {% csrf_token %}
+                                  <input class="btn btn-primary"  type="submit"
+                                         value="Take quiz">
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <p>No quiz available.</p>
+    {% endif %}
+</body>
+</html>

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # local
     "accounts.apps.AccountsConfig",
     "hello.apps.HelloConfig",
+    "quiz.apps.QuizConfig",
 ]
 
 AUTH_USER_MODEL = "accounts.CustomUser"
@@ -148,3 +149,17 @@ STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {"class": "logging.StreamHandler"},
+    },
+    "loggers": {
+        "bootdj": {
+            "handlers": ["console"],
+            "level": "INFO",
+        },
+    }
+}
