@@ -89,20 +89,67 @@
     transform: rotate(0deg);
 }
 
+.navbar-toggler.collapsed .toggler-icon {
+    background: linear-gradient( 349deg, rgb(219, 10, 10) 0%, rgb(255, 255, 255) 100% );
+}
 /* Color of 3 lines
 .navbar-toggler.collapsed .toggler-icon {
     background: linear-gradient( 263deg, rgba(252,74,74,1) 0%, rgba(0,212,255,1) 100% );
 }
-*/
-.navbar-toggler.collapsed .toggler-icon {
-    background: linear-gradient( 349deg, rgb(219, 10, 10) 0%, rgb(255, 255, 255) 100% );
-}
 
-/*
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
 }
 */
+
+.carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  height: 60vh;
+}
+.carousel-item:before {
+    content: "";
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.carousel-control-prev-icon {
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b51f09' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E") !important;
+}
+.carousel-control-next-icon {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b51f09' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") !important;
+}
+.carousel-indicators [data-bs-target] {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-radius: 26px;
+    background-color: var(--cn-darkred);
+}
+
+/*
+li.nav-item {
+    border-top:0px;
+    border-left:0px;
+    border-right:0px;
+    border-bottom:1px solid white;
+    margin:0px;
+    padding:0px;
+ } */
+
+a:hover.nav-link, a:focus.nav-link {
+    background-color:var(--cn-gold);
+}
 
 .yb-section {
     min-height: 160px;
