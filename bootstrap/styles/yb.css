@@ -11,6 +11,8 @@
     --cn-gold: #a28b57;
     --cn-silver: #e6e0ae;
     --cn-yellow: #dfbc5e;
+    --cn-grey: #f2f2f2;
+    --cn-darkgrey: #d7d8da;
     --cn-deer: #b18944;
     --cn-firebrick: #b41e22;
     --cn-sunray: #d8b953;
@@ -149,6 +151,21 @@ li.nav-item {
 
 a:hover.nav-link, a:focus.nav-link {
     background-color:var(--cn-gold);
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.yb-display-box {
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: var(--cn-gold);
+    background-color: var(--cn-grey);
 }
 
 .yb-section {
