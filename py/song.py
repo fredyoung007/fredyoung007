@@ -1,15 +1,28 @@
-song_list = [('See You Again', 'Wiz Khalifa', 229), ('We Own It', 'Wiz Khalifa', 227), ('Gangnam Style', 'PSY', 219)]
-def create_artist_duratoin_dictionary(song_list):
+def create_song_dictionary(song_list):
+    dict = {}
+    titles = []
+    artist = ""
+    for songst in song_list:
+        song = songst.split(',')
+        if song[1] in dict.keys():
+            dict.get(song[1]).append((song[0], song[2]))
+        else:
+            artist = song[1]
+            titles = [(song[0], song[2])]
+            dict[artist] = titles
 
-    sl = {}
-    artist =""
-    nm = 0
-    for song in song_list:
-        if (artist = song[1])
-            nm += song[2]
+    return dict
 
-        sl[song[1]] = song[2]
 
-    return sl
+songs = ["See You Again,Wiz Khalifa,229", "Uptown Funk,Mark Ronson,270", "Something New,Wiz Khalifa,200", "New Face,PSY,190", "Gangnam Style,PSY,219"]
+songs_dict = create_song_dictionary(songs)
 
-print(create_artist_duratoin_dictionary(song_list))
+for key in sorted(songs_dict):
+    print(key, sorted(songs_dict[key]))
+print(type(songs_dict))
+print(type(songs_dict['Wiz Khalifa']))
+print(type(songs_dict['Wiz Khalifa'][0]))
+
+
+for key in sorted(songs_dict):
+    print(key, sorted(songs_dict[key]))
