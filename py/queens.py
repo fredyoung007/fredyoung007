@@ -1,42 +1,40 @@
 """queens.py
 Queens Problem
+DFS backtracking
+Time O(n^2) Space O(n)
 """
 
 def display():
-    print(board)
-    for r in range(n):
-        row = ''
-        for c in range(n):
-            if board[r]==c:
-                row += 'Q '
-            else:
-                row += '- '
-        print(row)
+    for bd in solutions:
+        bd = [['Q' if board[r]==c else '-' for r in range(n)] for c in range(n)]
+        for row in bd:
+            print(' '.join(row))
+    print("Totaly found {0} solutions for {1} queens problem.".format(len(solutions), n))
 
-# diagnol differnce in row equals diffirence in column
+# same row/column or diagnol (differnce in row equals diffirence in column)
 def attack(r,c):
     for i in range(r):
         if (board[i] == c) or (abs(board[i]-c)==abs(r-i)):
             return True
     return False
-                
-# for each row try each column from left to right for attack
+
+# depth first top down for each row, then left to right for each column
 def queen(r, n):
-    global count
-    for c in range(n):
+    global solutions
+    if (r==n):
+        solutions.append(board)
+
+    for c in range(n): # backtrack left to right
         if not attack(r, c):
             board[r] = c
-            if (r == n-1):
-                count += 1
-                print("Solution", count)
-                display()
-            else:
-                queen(r+1, n)
+            queen(r+1, n) # depth first
 
-n = 4
+n = 8
 board = [0 for _ in range(n)]
-count = 0
+solutions = []
+
 queen(0, n)
+display()
 
 
 

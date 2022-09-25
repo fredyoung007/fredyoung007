@@ -16,13 +16,11 @@ def create_song_dictionary(song_list):
 
 songs = ["See You Again,Wiz Khalifa,229", "Uptown Funk,Mark Ronson,270", "Something New,Wiz Khalifa,200", "New Face,PSY,190", "Gangnam Style,PSY,219"]
 songs_dict = create_song_dictionary(songs)
-
 for key in sorted(songs_dict):
     print(key, sorted(songs_dict[key]))
 print(type(songs_dict))
 print(type(songs_dict['Wiz Khalifa']))
 print(type(songs_dict['Wiz Khalifa'][0]))
-
 
 for key in sorted(songs_dict):
     print(key, sorted(songs_dict[key]))
