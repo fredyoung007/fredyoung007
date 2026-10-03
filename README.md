@@ -12,7 +12,7 @@ iOS/Android apps. I'm the founder, chief architect and hands-on engineer
 
 ### By the numbers: my current platform
 - **6,800+ commits**
-- **~277,000 lines of code**: Java 165k · Python 67k · TypeScript 28k
+- **330,000+ lines of code**, including Java 165k · Python 67k · TypeScript 28k
 - **1,200+ test files**
 
 ### What I do
