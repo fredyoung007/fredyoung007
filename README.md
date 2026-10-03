@@ -1,8 +1,8 @@
 # Hi, I'm Fred Nan Yang 👋
 
 Chief architect and technology executive with 30 years across 20+ countries:
-from Sun Microsystems' original Java Center team to Global CTO and chief
-architect roles at Sun and Oracle, designing core platforms for some of the
+from Sun Microsystems' original Java Center team to chief architect roles
+at Sun and Oracle, designing core platforms for some of the
 world's largest banks and insurers.
 
 ### What I'm building
