@@ -1,4 +1,4 @@
-# Hi, I'm Nan (Fred) Yang 👋
+# Hi, I'm Fred Nan Yang 👋
 
 Chief architect and technology executive with 30 years across 20+ countries:
 from Sun Microsystems' original Java Center team to Global CTO and chief
